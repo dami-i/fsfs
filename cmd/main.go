@@ -109,6 +109,10 @@ func mountDirPath(cwd, dir string) string {
 }
 
 func startupMessage(host, port, dir string) string {
+	var hostname = host
+	if host == "0.0.0.0" {
+		hostname = "localhost"
+	}
 	return "" +
 		"┌───────────────────────────────┐\n" + //
 		"│ FSFS: Fast Static File Server │\n" +
@@ -116,6 +120,6 @@ func startupMessage(host, port, dir string) string {
 		"Serving files from\n" +
 		"\033[1m" + dir + "\033[0m\n" +
 		"over\n" +
-		"\033[1mhttp://" + host + ":" + port + "/\033[0m\n"
+		"\033[1mhttp://" + hostname + ":" + port + "/\033[0m\n"
 
 }
