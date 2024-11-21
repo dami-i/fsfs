@@ -118,8 +118,8 @@ func startupMessage(host, port, dir string) string {
 		"│ FSFS: Fast Static File Server │\n" +
 		"└───────────────────────────────┘\n" +
 		"Serving files from\n" +
-		"\033[1m" + dir + "\033[0m\n" +
+		dir + "\n" +
 		"over\n" +
-		"\033[1mhttp://" + hostname + ":" + port + "/\033[0m\n"
+		"http://" + hostname + ":" + port + "/\n"
 
 }
