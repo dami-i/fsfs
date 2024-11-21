@@ -2,18 +2,12 @@
 
 Quickly spin up a local static file web server.
 
-> [!WARNING]
-> 
-> 🐧 This application runs on Linux only.
-> 
-> 🪟 A Windows version is under development. 🚧
-
 ## Roadmap
 
 - [ ] Implement server restart/cache clearing on file changes (the "watch" feature).
 - [ ] Create an installation bash script.
 - [ ] Embed a simple `index.html` as a fallback if none is found in the user's directory.
-- [ ] Develop a Windows version.
+- [ ] Develop a Windows release version.
 
 ### Contribute
 
@@ -21,15 +15,21 @@ I am happy to evaluate and review contributions submitted via pull requests.
 
 ## Installation
 
+<!--
 ### Manual download
 
 Check out the available downloads on the [releases page](https://github.com/dami-i/fsfs/releases).
+-->
 
 ### Via `go install`
 
 ```sh
 go install github.com/dami-i/fsfs@latest
 ```
+
+> [!NOTE]
+>
+> 🪟 The Windows version is only available via `go install`.
 
 <!--
 ### Via bash installer
