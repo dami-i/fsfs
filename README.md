@@ -11,6 +11,7 @@ Quickly spin up a local static file web server.
 ## Roadmap
 
 - [ ] Implement server restart/cache clearing on file changes (the "watch" feature).
+- [ ] Create an installation bash script.
 - [ ] Embed a simple `index.html` as a fallback if none is found in the user's directory.
 - [ ] Develop a Windows version.
 
