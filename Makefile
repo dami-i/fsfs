@@ -1,2 +1,2 @@
 all:
-	go mod tidy && go build -o ./bin/fsfs ./cmd
+	go mod tidy && go build -o ./bin/fsfs .
