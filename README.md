@@ -1,20 +1,28 @@
 # FSFS: Fast Static File Server
 
+Quickly spin up a local static file web server.
+
 > [!WARNING]
 > 
-> This application runs on Linux only 🐧. Windows version is under development.
+> 🐧 This application runs on Linux only.
+> 
+> 🪟 A Windows version is under development. 🚧
 
 ## Roadmap
 
-- [ ] Implement server restart/cache clearing on file change.
-- [ ] Embed a simple `index.html` as a fallback if not found in the user's directory.
-- [ ] Windows version
+- [ ] Implement server restart/cache clearing on file changes (the "watch" feature).
+- [ ] Embed a simple `index.html` as a fallback if none is found in the user's directory.
+- [ ] Develop a Windows version.
+
+### Contribute
+
+I am happy to evaluate and review contributions submitted via pull requests.
 
 ## Installation
 
 ### Manual download
 
-See available downloads on [releases page](https://github.com/dami-i/fsfs/releases).
+Check out the available downloads on the [releases page](https://github.com/dami-i/fsfs/releases).
 
 ### Via `go install`
 
@@ -32,39 +40,44 @@ wget https:// | bash
 
 ### Building from source
 
-Make sure you have Go installed (minimum version 1.23.3).
+Make sure you have Go (minimum version 1.23.3) and Make installed.
 
 ```sh
 git clone https://github.com/dami-i/fsfs
 cd fsfs
 make
-cd bin
-sudo ln -s $(pwd)/fsfs /usr/local/bin
+sudo ln -s $(pwd)/bin/fsfs /usr/local/bin
 ```
 
 ## Usage examples
 
-### Serve current directory
+### Serve the current directory
 
 ```sh
 fsfs
 ```
 
+> [!IMPORTANT]
+>
+> The **watch** feature is not yet implemented.
+> 
+> This means you will need to press <kbd>Ctrl</kbd> + <kbd>F5</kbd> (hard refresh / bypass cache) in your browser to see the latest version of your file.
+
 ### Serve another directory
 
-#### Relative path
+- Relative path
 
 ```sh
 fsfs ./static
 ```
 
-#### Absolute path
+- Absolute path
 
 ```sh
 fsfs /home/myuser/website/static
 ```
 
-### Specify port
+### Specify a port
 
 ```sh
 fsfs -p 3000 ./static
@@ -72,6 +85,8 @@ fsfs -p 3000 ./static
 
 > [!NOTE]
 > 
-> The default port is **5000**. If busy, it tries to find the next free port.
+> The default port is **5000**.
+> 
+> If busy, the app will attempt to find the next available port.
 >
-> It won't try to find a free port if specified via `-p` flag.
+> However, if you specify a port using the `-p` flag, it will not search for an alternative.
