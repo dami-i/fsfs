@@ -1,2 +1,2 @@
 all:
-	go build -o ./bin/fsfs ./cmd/
+	go build -o ./bin/fsfs ./cmd
